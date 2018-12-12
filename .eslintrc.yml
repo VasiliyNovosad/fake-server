@@ -1,0 +1,4 @@
+extends: standard
+rules:
+  no-empty: warn
+  semi: off
