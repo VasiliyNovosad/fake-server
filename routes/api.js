@@ -199,6 +199,16 @@ router.get('/chats/:chat_id/messages/:id', function (req, res) {
   });
 });
 
+router.get('/chats/:chat_id/messages/:id/attachment', function (req, res) {
+  fs.open(`./public/pdfs/${req.params.id}FullNote.pdf`, 'r', (err, fd) => {
+    if (err) {
+      res.json({ status: 'error', message: {}, error: 'Attacment not found' });
+    } else {
+      res.download(`./public/pdfs/${req.params.id}FullNote.pdf`);
+    }
+  });
+});
+
 router.get('/search', function (req, res) {
   getSearchResults().then(results => {
     res.json({ status: 'ok', data: results });
