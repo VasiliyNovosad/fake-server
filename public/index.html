@@ -8,6 +8,12 @@
 <body>
   <h1>Express</h1>
   <p>Welcome to Express</p>
+  <p>API Endpoints:</p>
+  <p>GET /api/chats  -  returns JSON list of chats</p>
+  <p>GET /api/chats/:chat_id/messages  -  returns JSON list of chat's messages</p>
+  <p>GET /api/chats/:chat_id/messages/:id  -  returns JSON message with id=:id</p>
+  <p>GET /api/chats/:chat_id/messages/:id/attachment  -  downloads pdf document for message with id=:id</p>
+  <p>GET /pdfs/${:message_id}FullNote.pdf - downloads pdf document</p>
 </body>
 
 </html>
