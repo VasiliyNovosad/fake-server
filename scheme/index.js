@@ -30,7 +30,7 @@ const MessageType = new GraphQLObjectType({
     title: { type: GraphQLString },
     body: { type: GraphQLString },
     created_at: { type: GraphQLString },
-    age: { type: GraphQLInt },
+    // age: { type: GraphQLInt },
     chat: {
       type: ChatType,
       resolve (parent, args) {
@@ -109,6 +109,5 @@ const RootQuery = new GraphQLObjectType({
 // });
 
 module.exports = new GraphQLSchema({
-  query: RootQuery //,
-  // mutation: Mutation
+  query: RootQuery
 });
