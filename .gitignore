@@ -61,5 +61,3 @@ typings/
 .next
 
 .idea
-public/pdfs/*.pdf
-public/jsons/*.json
