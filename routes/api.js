@@ -70,4 +70,8 @@ router.get('/messages', function (req, res) {
   res.json({ status: 'ok', messages_count: faker.random.number({ min: 200, max: 250 }) });
 });
 
+router.post('/*', function (req, res, next) {
+  res.json({ status: 'ok'});
+});
+
 module.exports = router;
