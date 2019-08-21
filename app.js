@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.options('*', cors({origin: 'https://fidelityinsightsimple-pavelma.msappproxy.net'}));
+app.options('*', cors({origin: 'https://fidelityinsightsimple-pavelma.msappproxy.net'}));
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
 app.use('/graphql', graphqlRouter);
