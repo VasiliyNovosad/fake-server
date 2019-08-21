@@ -10,14 +10,20 @@ const graphqlRouter = require('./routes/graphqlRouter');
 
 const app = express();
 
-app.use(cors({origin: 'https://fidelityinsightsimple-pavelma.msappproxy.net'}));
+app.use(cors({
+  origin: 'https://fidelityinsightsimple-pavelma.msappproxy.net',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS'
+}));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.options('*', cors({origin: 'https://fidelityinsightsimple-pavelma.msappproxy.net'}));
+app.options('*', cors({
+  origin: 'https://fidelityinsightsimple-pavelma.msappproxy.net',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS'
+}));
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
 app.use('/graphql', graphqlRouter);
