@@ -74,4 +74,8 @@ router.post('/*', function (req, res, next) {
   res.json({ status: 'ok'});
 });
 
+router.get('/*', function (req, res, next) {
+  res.json({ status: 'ok'});
+});
+
 module.exports = router;
